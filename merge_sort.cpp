@@ -105,8 +105,8 @@ int main(int argc, char* argv[]) {
     // Parar o cronômetro
     auto stop = std::chrono::high_resolution_clock::now();
 
-    // Calcular o tempo de execução em milissegundos
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start).count();
+    // Calcular o tempo de execução em microsegundos
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start).count();
 
 
     // Imprimir o vetor ordenado
@@ -114,11 +114,11 @@ int main(int argc, char* argv[]) {
         std::cout << numeros[i] << '\n';
     }
 
-    // Calcular o tempo total de processamento em milissegundos
-    auto total_duration = std::chrono::duration_cast<std::chrono::milliseconds>(stop - start).count();
+    // Calcular o tempo total de processamento em microsegundos
+    auto total_duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start).count();
 
     // Imprimir o tempo total de processamento
-    std::cout << "Tempo total de processamento: " << total_duration << " milissegundos" << std::endl;
+    std::cout << "Tempo total de processamento: " << total_duration << " microsegundos" << std::endl;
 
     return 0;
 }

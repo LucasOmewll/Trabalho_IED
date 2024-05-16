@@ -61,11 +61,11 @@ int main(int argc, char* argv[]) {
 
     auto end = std::chrono::high_resolution_clock::now(); // Marca de tempo final
 
-    // Calcula o tempo decorrido em milissegundos
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    // Calcula o tempo decorrido em microsegundos
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 
-    // Exibe o tempo de execução em milissegundos
-    cout << "Tempo de execução: " << duration << " milissegundos\n";
+    // Exibe o tempo de execução em microsegundos
+    cout << "Tempo de execução: " << duration << " microsegundos\n";
 
     return 0;
 }

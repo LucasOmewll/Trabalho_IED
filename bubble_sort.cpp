@@ -52,8 +52,8 @@ int main(int argc, char* argv[]) {
     // Obtendo o tempo final
     auto end = std::chrono::steady_clock::now();
 
-    // Calculando o tempo de execução em milissegundos
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    // Calculando o tempo de execução em microsegundos
+    auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 
     // Exibindo o vetor ordenado
     for (int i = 0; i < numeros.size(); i++) {
@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Exibindo o tempo de execução
-    std::cout << "Tempo de execução: " << duration << " milissegundos\n";
+    std::cout << "Tempo de execução: " << duration << " microsegundos\n";
 
     return 0;
 }
