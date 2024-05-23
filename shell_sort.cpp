@@ -41,8 +41,7 @@ void shellSort(std::vector<int>& array) {
 // Print an array
 void printArray(const std::vector<int>& array) {
     for (int i = 0; i < array.size(); i++)
-        cout << array[i] << " ";
-    cout << endl;
+        cout << array[i] << '\n';
 }
 
 // Driver code
@@ -56,7 +55,6 @@ int main(int argc, char* argv[]) {
 
     std::vector<int> numeros = ler_arquivo_para_vetor(argv[1]);
     shellSort(numeros);
-    cout << "Array ordenado: \n";
     printArray(numeros);
 
     auto end = std::chrono::high_resolution_clock::now(); // Marca de tempo final
@@ -65,7 +63,7 @@ int main(int argc, char* argv[]) {
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 
     // Exibe o tempo de execução em microsegundos
-    cout << "Tempo de execução: " << duration << " microsegundos\n";
+    cout << "Tempo total de processamento: " << duration << " microsegundos\n";
 
     return 0;
 }

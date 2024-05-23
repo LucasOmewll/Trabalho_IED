@@ -61,7 +61,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Exibindo o tempo de execução
-    std::cout << "Tempo de execução: " << duration << " microsegundos\n";
+    std::cout << "Tempo total de processamento: " << duration << " microsegundos\n";
 
     return 0;
 }
