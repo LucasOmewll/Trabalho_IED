@@ -47,6 +47,8 @@ int main(int argc, char* argv[]) {
     // nums age como ponteiro para o vetor criado na função abaixo
     std::vector<int> numeros = ler_arquivo_para_vetor(argv[1]); // Passando o argumento da linha de comando para a função
 
+    // Criando o nome do arquivo de texto ordenado
+
     bubble_sort(numeros);
 
     // Obtendo o tempo final
@@ -55,10 +57,24 @@ int main(int argc, char* argv[]) {
     // Calculando o tempo de execução em microsegundos
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 
-    // Exibindo o vetor ordenado
-    for (int i = 0; i < numeros.size(); i++) {
-        std::cout << numeros[i] << '\n';
+    // Criando arquivo ordenado
+    std::string nome_dados = "";
+    nome_dados.append(argv[1]);
+    nome_dados.erase(0, 5);
+    std::ofstream dados_ordenado("ordenados/bubble_ordenado_"+nome_dados);
+
+    // Preenchendo o arquivo com os dados ordenados
+    if(dados_ordenado.is_open()){
+        for (int i = 0; i < numeros.size(); i++) {
+            dados_ordenado << numeros[i] << '\n';
+        }
+
+        dados_ordenado.close();
     }
+    else{
+        std::cout << "Falha ao criar arquivo ordenado.";
+    }
+
 
     // Exibindo o tempo de execução
     std::cout << "Tempo total de processamento: " << duration << " microsegundos\n";

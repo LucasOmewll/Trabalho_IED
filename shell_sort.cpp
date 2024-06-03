@@ -59,6 +59,24 @@ int main(int argc, char* argv[]) {
 
     auto end = std::chrono::high_resolution_clock::now(); // Marca de tempo final
 
+    // Criando arquivo ordenado
+    std::string nome_dados = "";
+    nome_dados.append(argv[1]);
+    nome_dados.erase(0, 5);
+    std::ofstream dados_ordenado("ordenados/shell_ordenado_"+nome_dados);
+
+    // Preenchendo o arquivo com os dados ordenados
+    if(dados_ordenado.is_open()){
+        for (int i = 0; i < numeros.size(); i++) {
+            dados_ordenado << numeros[i] << '\n';
+        }
+
+        dados_ordenado.close();
+    }
+    else{
+        std::cout << "Falha ao criar arquivo ordenado.";
+    }
+
     // Calcula o tempo decorrido em microsegundos
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 

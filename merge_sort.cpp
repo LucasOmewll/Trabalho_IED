@@ -109,10 +109,24 @@ int main(int argc, char* argv[]) {
     auto duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start).count();
 
 
-    // Imprimir o vetor ordenado
-    for (int i = 0; i < numeros.size(); i++) {
-        std::cout << numeros[i] << '\n';
+    // Criando arquivo ordenado
+    std::string nome_dados = "";
+    nome_dados.append(argv[1]);
+    nome_dados.erase(0, 5);
+    std::ofstream dados_ordenado("ordenados/merge_ordenado_"+nome_dados);
+
+    // Preenchendo o arquivo com os dados ordenados
+    if(dados_ordenado.is_open()){
+        for (int i = 0; i < numeros.size(); i++) {
+            dados_ordenado << numeros[i] << '\n';
+        }
+
+        dados_ordenado.close();
     }
+    else{
+        std::cout << "Falha ao criar arquivo ordenado.";
+    }
+
 
     // Calcular o tempo total de processamento em microsegundos
     auto total_duration = std::chrono::duration_cast<std::chrono::microseconds>(stop - start).count();
