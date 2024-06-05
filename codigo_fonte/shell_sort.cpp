@@ -38,12 +38,6 @@ void shellSort(std::vector<int>& array) {
     }
 }
 
-// Print an array
-void printArray(const std::vector<int>& array) {
-    for (int i = 0; i < array.size(); i++)
-        cout << array[i] << '\n';
-}
-
 // Driver code
 int main(int argc, char* argv[]) {
     if (argc != 2) {
@@ -55,7 +49,6 @@ int main(int argc, char* argv[]) {
 
     std::vector<int> numeros = ler_arquivo_para_vetor(argv[1]);
     shellSort(numeros);
-    printArray(numeros);
 
     auto end = std::chrono::high_resolution_clock::now(); // Marca de tempo final
 
